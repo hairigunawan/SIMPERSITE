@@ -9,20 +9,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     @vite('resources/css/app.css')
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-white font-Roboto">
 
-    <div class="flex">
-        {{-- Memanggil komponen sidebar --}}
-        <x-sidebar-nav />
+      <div class="flex h-screen">
+      <x-sidebar-nav />
 
-        {{-- Area konten utama --}}
-        <div class="flex-1 ml-64 min-h-screen flex flex-col">
-            <div class="p-6">
-                {{-- Memanggil komponen header dengan slot bernama 'header' --}}
-                <x-header></x-header>
-    
-                {{-- Konten utama halaman akan dimuat di sini --}}
-                <main class="mt-6">
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col">
+            <!-- Header -->
+            <x-header>Tambah Ruangan</x-header>
+
+            {{-- Konten utama halaman akan dimuat di sini --}}
+                <section class="mt-6">
                         <div class="container p-8 bg-white rounded-lg shadow-md">
                               <div class="flex justify-between items-center mb-6">
                                     <h1 class="text-xl font-bold text-gray-700">Formulir Penambahan Ruangan</h1>
@@ -71,9 +69,9 @@
                                     </div>
                               </form>
                         </div>
-                </main>
-            </div>
-        </div>
-    </div>
+                  </section>
+            </main>
+      </div>
+    <x-footer />
 </body>
 </html>
