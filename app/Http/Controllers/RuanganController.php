@@ -130,7 +130,7 @@ class RuanganController extends Controller
     public function destroy(Ruangan $ruangan)
     {
         // Hapus gambar jika bukan default
-        if($ruangan->gambar != 'images/default.png'){
+        if($ruangan->gambar != 'images/default.png|jpg'){
             Storage::delete('public/'.$ruangan->gambar);
         }
 

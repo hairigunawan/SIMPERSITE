@@ -6,6 +6,7 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
-@theme {
-    --font-Roboto: 'Roboto'
+theme {
+      --fontFamily : 'Roboto'
 }
+    

@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Ruangan - SIMPERSITE</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     @vite('resources/css/app.css')
+    <title>Edit Ruangan - SIMPERSITE</title>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-100 font-Roboto">
     <div class="flex">
         <x-sidebar-nav />
 
