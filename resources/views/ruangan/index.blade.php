@@ -11,13 +11,10 @@
       <div class="flex h-screen">
       <x-sidebar-nav />
 
-        <!-- Main Content -->
         <main class="flex-1 flex flex-col">
-            <!-- Header -->
             <x-header>DAFTAR RUANGAN</x-header>
 
-            <!-- Content -->
-            <section class="p-4 flex-1 mx-6 border-gray-200">
+            <section class="p-4 flex-1 mx-6 mb-4 rounded-xl border border-gray-300">
                 <div class="rounded-xl p-2">
                   <div class="flex justify-between gap-auto border  h-10 mb-5 items-center text-transparent bg-clip-text hover:bg-[#26805d]">
                         <a href="../" class="flex text-[#30B280] py-2 px-2 gap-2 items-center hover:text-green-300">
@@ -39,8 +36,6 @@
                                 <span class="font-medium">Success!</span> {{ session('success') }}
                             </div>
                         @endif
-
-                        {{-- Grid untuk Card Ruangan --}}
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 p-10">
                             @forelse ($ruangans as $ruangan)
                                 <div class="bg-white rounded-lg max-w-40 overflow-hidden flex flex-col border-b border-l border-r shadow-md border-gray-300">
@@ -58,7 +53,6 @@
                             @endforelse
                         </div>
                         
-                        {{-- Link Paginasi --}}
                         <div class="mt-8">
                             {{ $ruangans->links() }}
                         </div>

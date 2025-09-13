@@ -18,7 +18,7 @@
                   <x-header>DAFTAR INVENTORY</x-header>
 
                   <!-- Content -->
-                  <section class="p-4 flex-1 mx-6 mb-4">
+                  <section class="p-4 flex-1 mx-6 mb-4 rounded-xl border border-gray-300">
                   <div class="rounded-xl p-2">
                         <div class="flex justify-between h-10 items-center text-transparent bg-clip-text hover:bg-[#26805d]">
                               <a href="../" class="flex text-[#30B280] py-2 px-2 gap-2 items-center">
