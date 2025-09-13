@@ -14,12 +14,12 @@
         <!-- Main Content -->
         <main class="flex-1 flex flex-col">
             <!-- Header -->
-            <x-header>Daftar Ruangan</x-header>
+            <x-header>DAFTAR RUANGAN</x-header>
 
             <!-- Content -->
-            <section class="p-4 flex-1 border mx-6 rounded-xl border-gray-200 shadow-md mb-4">
+            <section class="p-4 flex-1 mx-6 border-gray-200">
                 <div class="rounded-xl p-2">
-                  <div class="flex justify-between gap-auto h-10 mb-5 items-center text-transparent bg-clip-text hover:bg-[#26805d]">
+                  <div class="flex justify-between gap-auto border  h-10 mb-5 items-center text-transparent bg-clip-text hover:bg-[#26805d]">
                         <a href="../" class="flex text-[#30B280] py-2 px-2 gap-2 items-center hover:text-green-300">
                               <svg class="w-5 h-5 text-[#30B280]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
@@ -29,39 +29,30 @@
                               </p>
                         </a>
                         <a href="{{ route('ruangan.create') }}" class="flex bg-[#30B280] py-2 px-2  rounded-[8px] gap-2 items-center hover:bg-[#298e67]">
-                              <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                              <path stroke="currentColor" stroke-width="2.5" d="M5 12h14m-7 7V5"/>
-                              </svg>
-                              <p class="text-white text-sm font-medium">
-                              Tambah Ruangan
-                              </p>
+                              <svg class="w-5 h-5 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                              <path stroke="currentColor" stroke-width="2.5" d="M5 12h14m-7 7V5"/></svg>
+                              <p class="text-white text-sm font-medium">Tambah Ruangan</p>
                         </a>
                   </div>
                         @if (session('success'))
-                            <div class="p-2 mb-4 text-sm text-green-700 bg-green-100 rounded-lg" role="alert">
+                            <div class="p-2 mb-4 text-sm text-[#30B280] bg-green-100 rounded-lg" role="alert">
                                 <span class="font-medium">Success!</span> {{ session('success') }}
                             </div>
                         @endif
 
                         {{-- Grid untuk Card Ruangan --}}
-                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-10">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 p-10">
                             @forelse ($ruangans as $ruangan)
                                 <div class="bg-white rounded-lg max-w-40 overflow-hidden flex flex-col border-b border-l border-r shadow-md border-gray-300">
-                                    <img src="{{ asset('storage/' . $ruangan->gambar) }}" alt="Gambar {{ $ruangan->nama_ruangan }}" class="w-full h-25 object-cover">
-                                    <div class="grid py-2 justify-center mt-auto">
-                                        <h3 class="text-m font-bold text-gray-700">{{ $ruangan->nama_ruangan }}</h3>
-                                        <p class="text-xs text-gray-400 mb-4">{{ $ruangan->lokasi }}</p>
-
-                                        {{-- Wrapper untuk tombol agar di bawah --}}
-                                        <div class="">
-                                             <a href="{{ route('ruangan.show', $ruangan->id) }}" class="block w-33 text-center mt-2 rounded-md bg-[#30B280] px-4 py-2 text-xs font-medium text-white shadow-sm transition-colors hover:bg-[#23805c]">
-                                                View Detail
-                                            </a>
-                                        </div>
+                                    <img src="{{ asset('storage/' . $ruangan->gambar) }}" alt="Gambar {{ $ruangan->nama_ruangan }}" class="w-full h-30 object-cover">
+                                    <div class="grid justify-center py-2">
+                                          <h3 class="text-m font-bold text-gray-700">{{ $ruangan->nama_ruangan }}</h3>
+                                          <p class="text-xs text-gray-400 mb-2">{{ $ruangan->lokasi }}</p>
+                                          <a href="{{ route('ruangan.show', $ruangan->id) }}" class="block w-33 text-center mt-2 rounded-md bg-[#30B280] px-4 py-2 text-xs font-medium text-white shadow-sm transition-colors hover:bg-[#23805c]">View Detail</a>
                                     </div>
                                 </div>
                             @empty
-                                <div class="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-4 text-center py-12">
+                                <div class="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-4 text-center py-8">
                                     <p class="text-gray-500">Data ruangan belum tersedia.</p>
                                 </div>
                             @endforelse
