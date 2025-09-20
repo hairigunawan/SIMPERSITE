@@ -1,11 +1,21 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
-    public function test_basic_assertion()
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function test_basic_test(): void
     {
-        $this->assertTrue(true);
+        $response = $this->get('/');
+
+        $response->assertStatus(200);
     }
 }
