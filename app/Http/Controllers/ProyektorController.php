@@ -32,9 +32,10 @@ class ProyektorController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'kode_proyektor' => 'required|unique:proyektors|max:10',
-            'merk'           => 'required|max:50',
-            'tipe'           => 'nullable|max:50',
-            'status'         => 'required|in:tersedia,dipinjam,rusak',
+            'nama_sarpras' => 'required|max:50',
+            'merk' => 'required|max:50',
+            'status' => 'required|in:tersedia,dipinjam,rusak',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         if ($validator->fails()) {
@@ -43,10 +44,23 @@ class ProyektorController extends Controller
                         ->withInput();
         }
 
-        Proyektor::create($request->all());
+        $path = 'images/default.png';
+        if ($request->hasFile('gambar')) {
+            $path = $request->file('gambar')->store('images', 'public');
+            // get only filename
+            $path = str_replace('public/', '', $path);
+        }
+
+        Proyektor::create([
+            'kode_proyektor' => $request->kode_proyektor,
+            'nama_sarpras' => $request->nama_sarpras,
+            'merk' => $request->merk,
+            'status' => $request->status,
+            'gambar' => $path
+        ]);
 
         return redirect()->route('proyektor.index')
-                         ->with('success', 'Proyektor berhasil ditambahkan.');
+                         ->with('success', 'proyektor berhasil ditambahkan.');
     }
 
     /**
@@ -62,7 +76,7 @@ class ProyektorController extends Controller
      */
     public function edit(Proyektor $proyektor)
     {
-        return view('proyektor.edit', compact('proyektor'));
+        return view('proyektor.edite', compact('proyektor'));
     }
 
     /**
@@ -71,10 +85,11 @@ class ProyektorController extends Controller
     public function update(Request $request, Proyektor $proyektor)
     {
         $validator = Validator::make($request->all(), [
-            'kode_proyektor' => 'required|max:10|unique:proyektors,kode_proyektor,'.$proyektor->id,
-            'merk'           => 'required|max:50',
-            'tipe'           => 'nullable|max:50',
-            'status'         => 'required|in:tersedia,dipinjam,rusak',
+            'kode_proyektor' => 'required|unique:proyektors|max:10',
+            'nama_sarpras' => 'required|max:50',
+            'merk' => 'required|max:50',
+            'status' => 'required|in:tersedia,dipinjam,rusak',
+            'gambar' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         if ($validator->fails()) {

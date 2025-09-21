@@ -40,7 +40,7 @@
                 @endif
 
                 <div class="flex mx-auto justify-center">
-                    <form action="{{ route('proyektor.store') }}" method="POST">
+                    <form action="{{ route('proyektor.store') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="flex items-start">
                             <div class="pl-10">
@@ -51,18 +51,18 @@
                                         <input type="text" name="kode_proyektor" placeholder="Masukan kode proyektor" class="border py-2 w-80 rounded-sm px-2" value="{{ old('kode_proyektor') }}" required/>
                                     </label>
                                 </div>
+                                {{-- Input nama --}}
+                                <div class="flex gap-4 px-4 py-1">
+                                    <label class="flex flex-col flex-1">
+                                        <p class="text-[#0d141b] text-base font-medium leading-normal pb-2">Tipe</p>
+                                        <input type="text" name="nama_sarpras" placeholder="Masukan tipe (opsional)" class="border py-2 w-80 rounded-sm px-2" value="{{ old('nama_sarpras') }}"/>
+                                    </label>
+                                </div>
                                 {{-- Input Merk --}}
                                 <div class="flex gap-4 px-4 py-1">
                                     <label class="flex flex-col flex-1">
                                         <p class="text-[#0d141b] text-base font-medium leading-normal pb-2">Merk</p>
                                         <input type="text" name="merk" placeholder="Masukan merk proyektor" class="border py-2 w-80 rounded-sm px-2" value="{{ old('merk') }}" required/>
-                                    </label>
-                                </div>
-                                {{-- Input Tipe --}}
-                                <div class="flex gap-4 px-4 py-1">
-                                    <label class="flex flex-col flex-1">
-                                        <p class="text-[#0d141b] text-base font-medium leading-normal pb-2">Tipe</p>
-                                        <input type="text" name="tipe" placeholder="Masukan tipe (opsional)" class="border py-2 w-80 rounded-sm px-2" value="{{ old('tipe') }}"/>
                                     </label>
                                 </div>
                                 {{-- Input Status --}}
@@ -81,6 +81,12 @@
 
                             {{-- Tombol Submit --}}
                             <div class="flex flex-col p-4">
+                                <p class="text-[#0d141b] text-base font-medium leading-normal pb-2">Upload Gambar</p>
+                                <div class="flex flex-col items-center w-full h-auto gap-6 rounded-lg border-2 border-dashed border-[#cfdbe7] px-6 py-14">
+                                    <p class="text-[#0d141b] text-sm font-normal leading-normal max-w-[480px] text-center">Pilih gambar ruangan untuk diupload</p>
+                                    <input type="file" name="gambar" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:border-0 rounded-xl file:font-semibold file:text-[#30B280] bg-gray-200
+                                    "/>
+                                </div>
                                 <div class="flex pr-4 mt-8 items-center mx-auto">
                                     <button type="submit" class="flex bg-[#30B280] py-2 px-4 rounded-[8px] gap-2 items-center hover:bg-[#298e67]">
                                         <span class="text-white text-sm font-medium">Tambahkan Proyektor</span>

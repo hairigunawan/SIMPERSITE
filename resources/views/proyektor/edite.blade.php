@@ -55,20 +55,20 @@
                                     </div>
                                     <div class="flex gap-4 px-4 py-1">
                                         <label class="flex flex-col flex-1">
+                                            <p class="text-gray-800 text-base font-medium pb-2">Kode Proyektor</p>
+                                            <input type="text" name="kode_proyektor" placeholder="Masukan kode proyektor" class="border py-2 w-80 rounded-md px-2 border-gray-300 focus:ring-emerald-500 focus:border-emerald-500" value="{{ old('kode_proyektor', $proyektor->nama_proyektor) }}" required/>
+                                        </label>
+                                    </div>
+                                    <div class="flex gap-4 px-4 py-1">
+                                        <label class="flex flex-col flex-1">
                                             <p class="text-gray-800 text-base font-medium pb-2">Nama Proyektor</p>
-                                            <input type="text" name="nama_proyektor" placeholder="Masukan nama proyektor" class="border py-2 w-80 rounded-md px-2 border-gray-300 focus:ring-emerald-500 focus:border-emerald-500" value="{{ old('nama_proyektor', $proyektor->nama_proyektor) }}" required/>
+                                            <input type="text" name="nama_sarpras" placeholder="Masukan merk proyektor" class="border py-2 w-80 rounded-md px-2 border-gray-300 focus:ring-emerald-500 focus:border-emerald-500" value="{{ old('nama_sarpras', $proyektor->merk) }}" required/>
                                         </label>
                                     </div>
                                     <div class="flex gap-4 px-4 py-1">
                                         <label class="flex flex-col flex-1">
-                                            <p class="text-gray-800 text-base font-medium pb-2">Merk</p>
-                                            <input type="text" name="merk" placeholder="Masukan merk proyektor" class="border py-2 w-80 rounded-md px-2 border-gray-300 focus:ring-emerald-500 focus:border-emerald-500" value="{{ old('merk', $proyektor->merk) }}" required/>
-                                        </label>
-                                    </div>
-                                    <div class="flex gap-4 px-4 py-1">
-                                        <label class="flex flex-col flex-1">
-                                            <p class="text-gray-800 text-base font-medium pb-2">Lokasi</p>
-                                            <input type="text" name="lokasi" placeholder="Masukan lokasi proyektor" class="border py-2 w-80 rounded-md px-2 border-gray-300 focus:ring-emerald-500 focus:border-emerald-500" value="{{ old('lokasi', $proyektor->lokasi) }}" required/>
+                                            <p class="text-gray-800 text-base font-medium pb-2">merk</p>
+                                            <input type="text" name="merk" placeholder="Masukan merk proyektor" class="border py-2 w-80 rounded-md px-2 border-gray-300 focus:ring-emerald-500 focus:border-emerald-500" value="{{ old('merk', $proyektor->lokasi) }}" required/>
                                         </label>
                                     </div>
                                     <div class="flex gap-4 px-4 py-1">
@@ -88,9 +88,9 @@
                                     <p class="text-gray-800 text-base font-medium pb-2">Upload Gambar (Opsional)</p>
                                     <div class="flex flex-col items-center w-full h-auto gap-4 rounded-lg border-2 border-dashed border-gray-300 px-6 py-5">
                                         <p class="text-gray-600 text-sm font-normal text-center">Ganti gambar proyektor jika perlu.</p>
-                                        <input type="file" name="gambar" class="block w-full text-sm text-slate-500 
-                                            file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 
-                                            file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-600 
+                                        <input type="file" name="gambar" class="block w-full text-sm text-slate-500
+                                            file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0
+                                            file:text-sm file:font-semibold file:bg-emerald-50 file:text-emerald-600
                                             hover:file:bg-emerald-100"/>
                                         <div class="mt-4">
                                             <p class="text-xs text-gray-500 mb-2">Gambar Saat Ini:</p>
