@@ -51,7 +51,7 @@
                                                       <p class="font-bold text-4xl">15</p>
                                                       </div>
                                                 </div>
-                                          </div>                                                
+                                          </div>
                                           <a href="ruangan" class="flex mx-auto justify-center items-center bg-[#30B280] h-8 text-white text-sm mt-4 font-medium rounded-[8px]">
                                           View Ruangan
                                           </a>
@@ -61,7 +61,7 @@
                                           <div class="flex justify-center">
                                                 <div class="flex items-center gap-5">
                                                       <svg xmlns="http://www.w3.org/2000/svg" class="w-14 h-14 text-[#30B280]" fill="currentColor" viewBox="0 0 24 24">
-                                                      <path d="M21 7H3c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h2l-1 2h2l1-2h10l1 2h2l-1-2h2c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-9 8c-2.21 
+                                                      <path d="M21 7H3c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2h2l-1 2h2l1-2h10l1 2h2l-1-2h2c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm-9 8c-2.21
                                                        0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7-3h-2v-2h2v2z"/>
                                                       </svg>
                                                       <div>
@@ -69,7 +69,7 @@
                                                       <p class="font-bold text-4xl">25</p>
                                                       </div>
                                                 </div>
-                                          </div>                                                
+                                          </div>
                                           <a href="proyektor" class="flex mx-auto justify-center items-center bg-[#30B280] h-8 text-white text-sm mt-4 font-medium rounded-[8px]">
                                           View Proyektor
                                           </a>
@@ -80,6 +80,5 @@
                   </section>
             </main>
       </div>
-      <x-footer></x-footer>
 </body>
 </html>

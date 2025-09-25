@@ -41,10 +41,15 @@
                                 <div class="bg-white rounded-lg max-w-40 overflow-hidden flex flex-col border-b border-l border-r shadow-md border-gray-300">
                                     <img src="{{ asset('storage/' . $ruangan->gambar) }}" alt="Gambar {{ $ruangan->nama_ruangan }}" class="w-full h-30 object-cover">
                                     <div class="grid justify-center py-2">
-                                          <h3 class="text-m font-bold text-gray-700">{{ $ruangan->nama_ruangan }}</h3>
-                                          <p class="text-xs text-gray-400 mb-2">{{ $ruangan->lokasi }}</p>
-                                          <a href="{{ route('ruangan.show', $ruangan->id) }}" class="block w-33 text-center mt-2 rounded-md bg-[#30B280] px-4 py-2 text-xs font-medium text-white shadow-sm transition-colors hover:bg-[#23805c]">View Detail</a>
-                                    </div>
+                                            <h3 class="text-m font-bold text-gray-700">{{ $ruangan->nama_ruangan }}</h3>
+                                            <p class="text-xs text-gray-400 mb-2">{{ $ruangan->lokasi }}</p>
+                                            <p class="text-xs text-gray-500 mb-2">Status:
+                                                <span class="font-semibold {{ $ruangan->status == 'tersedia' ? 'text-green-600' : ($ruangan->status == 'dipinjam' ? 'text-yellow-600' : 'text-red-600') }}">
+                                                    {{ ucfirst($ruangan->status) }}
+                                                </span>
+                                            </p>
+                                            <a href="{{ route('ruangan.show', $ruangan->id) }}" class="block w-33 text-center mt-2 rounded-md bg-[#30B280] px-4 py-2 text-xs font-medium text-white shadow-sm transition-colors hover:bg-[#23805c]">View Detail</a>
+                                        </div>
                                 </div>
                             @empty
                                 <div class="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-4 text-center py-8">
@@ -52,7 +57,7 @@
                                 </div>
                             @endforelse
                         </div>
-                        
+
                         <div class="mt-8">
                             {{ $ruangans->links() }}
                         </div>
@@ -60,6 +65,5 @@
             </section>
         </main>
     </div>
-    <x-footer />
 </body>
 </html>

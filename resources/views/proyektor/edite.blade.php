@@ -47,37 +47,32 @@
                             @method('PUT')
                             <div class="flex items-start">
                                 <div>
-                                    <div class="flex gap-4 px-4 py-3">
-                                        <label class="flex flex-col flex-1">
-                                            <p class="text-gray-800 text-base font-medium pb-2">Kode Proyektor</p>
-                                            <input type="text" name="kode_proyektor" placeholder="Masukan kode proyektor" class="border py-2 w-80 rounded-md px-2 border-gray-300 focus:ring-emerald-500 focus:border-emerald-500" value="{{ old('kode_proyektor', $proyektor->kode_proyektor) }}" required/>
-                                        </label>
-                                    </div>
-                                    <div class="flex gap-4 px-4 py-1">
+                                    <div class="flex px-4 py-1 mb-4">
                                         <label class="flex flex-col flex-1">
                                             <p class="text-gray-800 text-base font-medium pb-2">Kode Proyektor</p>
                                             <input type="text" name="kode_proyektor" placeholder="Masukan kode proyektor" class="border py-2 w-80 rounded-md px-2 border-gray-300 focus:ring-emerald-500 focus:border-emerald-500" value="{{ old('kode_proyektor', $proyektor->nama_proyektor) }}" required/>
                                         </label>
                                     </div>
-                                    <div class="flex gap-4 px-4 py-1">
+                                    <div class="flex gap-4 px-4 py-1 mb-4">
                                         <label class="flex flex-col flex-1">
                                             <p class="text-gray-800 text-base font-medium pb-2">Nama Proyektor</p>
                                             <input type="text" name="nama_sarpras" placeholder="Masukan merk proyektor" class="border py-2 w-80 rounded-md px-2 border-gray-300 focus:ring-emerald-500 focus:border-emerald-500" value="{{ old('nama_sarpras', $proyektor->merk) }}" required/>
                                         </label>
                                     </div>
-                                    <div class="flex gap-4 px-4 py-1">
+                                    <div class="flex gap-4 px-4 py-1 mb-4">
                                         <label class="flex flex-col flex-1">
                                             <p class="text-gray-800 text-base font-medium pb-2">merk</p>
                                             <input type="text" name="merk" placeholder="Masukan merk proyektor" class="border py-2 w-80 rounded-md px-2 border-gray-300 focus:ring-emerald-500 focus:border-emerald-500" value="{{ old('merk', $proyektor->lokasi) }}" required/>
                                         </label>
                                     </div>
-                                    <div class="flex gap-4 px-4 py-1">
-                                        <label class="flex flex-col flex-1">
-                                            <p class="text-gray-800 text-base font-medium pb-2">Kondisi</p>
-                                            <select name="kondisi" class="border py-2 w-80 rounded-md px-2 border-gray-300 focus:ring-emerald-500 focus:border-emerald-500">
-                                                <option value="Baik" {{ old('kondisi', $proyektor->kondisi) == 'Baik' ? 'selected' : '' }}>Baik</option>
-                                                <option value="Perlu Perbaikan" {{ old('kondisi', $proyektor->kondisi) == 'Perlu Perbaikan' ? 'selected' : '' }}>Perlu Perbaikan</option>
-                                                <option value="Rusak" {{ old('kondisi', $proyektor->kondisi) == 'Rusak' ? 'selected' : '' }}>Rusak</option>
+                                    <div class="grid gap-1 px-4 py-1 mb-4">
+                                        <p class="text-gray-800 text-base font-medium pb-2">Status</p>
+                                        <label for="status"class="flex flex-col flex-1 border py-2 w-80 rounded-md px-2 border-gray-300">
+                                            <select name="status" id="status" class="form-control" required>
+                                                <option value="">-- Pilih Status --</option>
+                                                <option value="tersedia" {{ old('status', $proyektor->status) == 'tersedia' ? 'selected' : '' }}>Tersedia</option>
+                                                <option value="dipinjam" {{ old('status', $proyektor->status) == 'dipinjam' ? 'selected' : '' }}>Dipinjam</option>
+                                                <option value="rusak" {{ old('status', $proyektor->status) == 'rusak' ? 'selected' : '' }}>Rusak</option>
                                             </select>
                                         </label>
                                     </div>
@@ -86,7 +81,7 @@
                                 {{-- Upload Gambar --}}
                                 <div class="flex flex-col p-4">
                                     <p class="text-gray-800 text-base font-medium pb-2">Upload Gambar (Opsional)</p>
-                                    <div class="flex flex-col items-center w-full h-auto gap-4 rounded-lg border-2 border-dashed border-gray-300 px-6 py-5">
+                                    <div class="flex flex-col items-center w-100 h-full gap-4 rounded-lg border-2 border-dashed border-gray-300 px-6 py-5">
                                         <p class="text-gray-600 text-sm font-normal text-center">Ganti gambar proyektor jika perlu.</p>
                                         <input type="file" name="gambar" class="block w-full text-sm text-slate-500
                                             file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0
@@ -111,6 +106,5 @@
             </section>
         </main>
     </div>
-    <x-footer />
 </body>
 </html>

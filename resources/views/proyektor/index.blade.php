@@ -43,9 +43,10 @@
                     @forelse ($proyektors as $proyektor)
                         <div class="bg-white rounded-lg max-w-40 overflow-hidden flex flex-col border-b border-l border-r shadow-md border-gray-300">
                             <div class="grid justify-center py-4">
+                                <img src="{{ asset('storage/' . $proyektor->gambar) }}" alt="Gambar {{ $proyektor->nama_proyektor }}" class="w-full h-30 object-cover">
                                 <h3 class="text-m font-bold text-gray-700">{{ $proyektor->merk }} {{ $proyektor->tipe }}</h3>
                                 <p class="text-xs text-gray-400 mb-2">Kode: {{ $proyektor->kode_proyektor }}</p>
-                                <p class="text-xs text-gray-500 mb-2">Status: 
+                                <p class="text-xs text-gray-500 mb-2">Status:
                                     <span class="font-semibold {{ $proyektor->status == 'tersedia' ? 'text-green-600' : ($proyektor->status == 'dipinjam' ? 'text-yellow-600' : 'text-red-600') }}">
                                         {{ ucfirst($proyektor->status) }}
                                     </span>
@@ -67,6 +68,5 @@
         </section>
     </main>
 </div>
-<x-footer />
 </body>
 </html>
