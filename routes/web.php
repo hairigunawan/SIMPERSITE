@@ -18,3 +18,8 @@ Route::resource('proyektor', ProyektorController::class);
 Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman');
 Route::post('/peminjaman/ruangan', [PeminjamanController::class, 'pinjamRuangan'])->name('peminjaman.ruangan');
 Route::post('/peminjaman/proyektor', [PeminjamanController::class, 'pinjamProyektor'])->name('peminjaman.proyektor');
+
+use App\Http\Controllers\JadwalController;
+
+
+    Route::resource('jadwal', JadwalController::class);

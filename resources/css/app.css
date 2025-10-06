@@ -1,11 +1,10 @@
-@import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-theme {
-      --fontFamily: 'Roboto'
+/* Custom theme vars (optional) */
+:root {
+    --fontFamily: 'Roboto', sans-serif;
 }
